@@ -59,6 +59,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Next_btn"/>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="Slider" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-p8-Lle">
+                                <rect key="frame" x="136" y="652" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -257,7 +261,7 @@
         <!--View Controller-->
         <scene sceneID="5cg-JE-j8B">
             <objects>
-                <viewController id="Gsj-ai-PRb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstScreen" id="Gsj-ai-PRb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BnM-pN-aOa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -619,7 +623,7 @@
                         <viewLayoutGuide key="safeArea" id="JsM-W8-7xN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Nav item 2" id="viz-f7-EFN"/>
+                    <tabBarItem key="tabBarItem" title="" image="Nav_item2" id="viz-f7-EFN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X26-03-aOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -650,7 +654,7 @@
                         <viewLayoutGuide key="safeArea" id="DGL-6H-u0k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Nav item 3" id="h3N-pU-Ycq"/>
+                    <tabBarItem key="tabBarItem" title="" image="Nav_item3" id="h3N-pU-Ycq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKG-Dw-HHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -682,7 +686,7 @@
                         <viewLayoutGuide key="safeArea" id="2Dz-bb-8XD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Nav item 4" id="i7R-fF-9fe"/>
+                    <tabBarItem key="tabBarItem" title="" image="Nav_item4" id="i7R-fF-9fe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9V-re-dba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -747,16 +751,17 @@
         <image name="Background" width="390" height="615"/>
         <image name="FifthScreen" width="343" height="343"/>
         <image name="FourthScreen" width="339" height="339"/>
-        <image name="Nav item 2" width="87.666664123535156" height="80"/>
-        <image name="Nav item 3" width="87.666664123535156" height="80"/>
-        <image name="Nav item 4" width="87.666664123535156" height="80"/>
         <image name="Nav_item1" width="87.666664123535156" height="80"/>
+        <image name="Nav_item2" width="87.666664123535156" height="80"/>
+        <image name="Nav_item3" width="87.666664123535156" height="80"/>
+        <image name="Nav_item4" width="87.666664123535156" height="80"/>
         <image name="Next_btn" width="330" height="48"/>
         <image name="Password" width="24" height="24"/>
         <image name="Remember_btn" width="24" height="24"/>
         <image name="SecondScreen" width="302" height="295"/>
         <image name="SignIn_btn" width="330" height="48"/>
         <image name="SignUp_btn" width="330" height="48"/>
+        <image name="Slider" width="118" height="6"/>
         <image name="TaskNextLogo" width="174" height="213"/>
         <image name="TeaskNext" width="314" height="53"/>
         <image name="ThirdScreen" width="335" height="335"/>
