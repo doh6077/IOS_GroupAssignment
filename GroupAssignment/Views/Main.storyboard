@@ -83,7 +83,7 @@
         <!--View Controller-->
         <scene sceneID="V9l-NX-VJH">
             <objects>
-                <viewController storyboardIdentifier="PageOneVC" id="4NL-LS-JjI" customClass="ViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageTwoVC" id="4NL-LS-JjI" customClass="ViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2mm-HU-yzx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@
         <!--View Controller-->
         <scene sceneID="yiB-7e-ebt">
             <objects>
-                <viewController storyboardIdentifier="PageOneVC" id="YNv-WW-erz" customClass="ViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageㅅVC" id="YNv-WW-erz" customClass="ViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVO-EO-YOk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
