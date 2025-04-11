@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="1648" y="-658"/>
         </scene>
-        <!--View Controller-->
+        <!--Get Started View Controller-->
         <scene sceneID="6FT-TN-Un7">
             <objects>
-                <viewController id="Flg-6K-7Xp" sceneMemberID="viewController">
+                <viewController id="Flg-6K-7Xp" customClass="GetStartedViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fm8-I9-Dum">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,19 +188,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf0-7J-TpE">
-                                <rect key="frame" x="30" y="22" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Back_btn2"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ9-w2-yCp">
                                 <rect key="frame" x="30" y="697" width="330" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="SignUp_btn"/>
                                 <connections>
-                                    <segue destination="gkB-Q4-QCD" kind="show" id="EOT-Bq-JaO"/>
+                                    <action selector="signUpBtn:" destination="Flg-6K-7Xp" eventType="touchUpInside" id="29e-wr-vJ1"/>
+                                    <segue destination="gkB-Q4-QCD" kind="show" identifier="goToSignUp" id="EOT-Bq-JaO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -307,19 +302,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aek-DH-4Xd">
-                                        <rect key="frame" x="30" y="22" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SS-JE-GeU">
                                         <rect key="frame" x="30" y="697" width="330" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="SignUp_btn"/>
                                         <connections>
-                                            <segue destination="NEA-pt-CDk" kind="show" id="0r1-1I-twl"/>
+                                            <segue destination="NEA-pt-CDk" kind="show" identifier="goToSelectSchool" id="0r1-1I-twl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -330,16 +319,25 @@
                         <viewLayoutGuide key="safeArea" id="Zw9-H7-enf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9U3-ZT-PRf"/>
+                    <navigationItem key="navigationItem" id="9U3-ZT-PRf">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="5gE-T7-mVj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="aek-DH-4Xd">
+                                <rect key="frame" x="16" y="0.0" width="64" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDz-BO-wb7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5532.06106870229" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="4891" y="-244"/>
         </scene>
-        <!--View Controller-->
+        <!--School Selection View Controller-->
         <scene sceneID="Xra-SL-qbV">
             <objects>
-                <viewController id="NEA-pt-CDk" sceneMemberID="viewController">
+                <viewController id="NEA-pt-CDk" customClass="SchoolSelectionViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nnm-jv-DAd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,25 +369,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sO9-Qt-LbF">
-                                        <rect key="frame" x="288" y="23" width="97" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Skip">
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-DM-IFq">
                                         <rect key="frame" x="321" y="259" width="24" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHk-nl-sQc">
-                                        <rect key="frame" x="30" y="23" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <color key="tintColor" name="BackgroundColor"/>
@@ -398,11 +381,38 @@
                         <viewLayoutGuide key="safeArea" id="CyA-EV-mEu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UWi-N0-ctP"/>
+                    <navigationItem key="navigationItem" id="UWi-N0-ctP">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="jk3-QM-Z3i">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="LHk-nl-sQc">
+                                <rect key="frame" x="16" y="0.0" width="64" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zoM-Vi-pCX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sO9-Qt-LbF">
+                                <rect key="frame" x="280" y="4.6666666666666679" width="97" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Skip">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <connections>
+                                <action selector="skipBtn:" destination="NEA-pt-CDk" id="bHc-TR-MdC"/>
+                                <segue destination="ghY-C8-LD5" kind="show" identifier="goToMainTabBar" id="lgc-lq-Pp1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="schoolTextField" destination="qcx-qb-13a" id="0Kp-KG-ccS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ot-u8-GW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6196.1832061068699" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="5707.6335877862593" y="-2.1126760563380285"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="I2N-VO-AVF">
@@ -483,6 +493,9 @@
                                         <rect key="frame" x="19" y="708" width="354" height="62"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="SignIn_btn"/>
+                                        <connections>
+                                            <segue destination="NEA-pt-CDk" kind="show" identifier="goToSelectSchool" id="Vzm-dD-6dW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9U-vM-TS9">
                                         <rect key="frame" x="22" y="23" width="40" height="40"/>
@@ -507,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXv-ye-knT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3679" y="778"/>
+            <point key="canvasLocation" x="4801" y="851"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Zlu-3f-UBL">
@@ -518,7 +531,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-Rs-zZ0">
-                                <rect key="frame" x="30" y="20" width="40" height="40"/>
+                                <rect key="frame" x="22" y="11" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
@@ -530,12 +543,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0A4-sX-bga">
-                                <rect key="frame" x="320" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Add_btn"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-45-T62">
                                 <rect key="frame" x="0.0" y="127" width="393" height="629"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -690,6 +697,12 @@
                                 <rect key="frame" x="30" y="180" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0A4-sX-bga">
+                                <rect key="frame" x="317" y="59" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Add_btn"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JsM-W8-7xN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -708,12 +721,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E94-ai-art">
-                                <rect key="frame" x="30" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Assignment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94P-u3-c2M">
                                 <rect key="frame" x="82" y="66" width="227" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -815,6 +822,12 @@
                                 <rect key="frame" x="320" y="670" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E94-ai-art">
+                                <rect key="frame" x="30" y="22" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JyY-yd-ZCT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -823,12 +836,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33p-be-XZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7677.0992366412211" y="17.605633802816904"/>
+            <point key="canvasLocation" x="6364" y="781"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hbi-JY-UfV">
             <objects>
                 <tabBarController id="ghY-C8-LD5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Kpm-s5-VYJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PGq-GB-Qmm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -841,14 +855,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skn-zY-a0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6618" y="-714"/>
+            <point key="canvasLocation" x="6682" y="-2"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="j5n-Tn-oMQ">
             <objects>
                 <viewController id="8AM-FD-8At" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2nm-jF-Xkl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzx-Ya-Eeh">
@@ -864,12 +878,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSA-NF-3gg">
-                                <rect key="frame" x="320" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Add_btn"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOx-nm-jbT">
                                 <rect key="frame" x="31" y="154" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -917,7 +925,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Nav_item2" id="9r4-98-tJO"/>
-                    <navigationItem key="navigationItem" id="6Dh-1b-wvm"/>
+                    <navigationItem key="navigationItem" id="6Dh-1b-wvm">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kiU-3b-xWj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MSA-NF-3gg">
+                                <rect key="frame" x="320" y="20" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Add_btn"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FA-A1-hdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -928,7 +945,7 @@
             <objects>
                 <viewController id="t7U-D1-dEJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="60w-QK-5ep">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pae-Qb-AdK">
@@ -1092,11 +1109,13 @@
             <point key="canvasLocation" x="3032.8244274809158" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0r1-1I-twl"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_btn" width="40" height="40"/>
         <image name="BackHome_btn" width="330" height="48"/>
         <image name="Back_btn1" width="40" height="40"/>
-        <image name="Back_btn2" width="40" height="40"/>
         <image name="Background" width="390" height="615"/>
         <image name="Calender" width="24" height="24"/>
         <image name="Completed_bar" width="153" height="8"/>
