@@ -14,6 +14,7 @@ class GetStartedViewController: UIViewController {
 
     }
     
+
     @IBAction func signUpBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "goToSignUp", sender: self)
     }
