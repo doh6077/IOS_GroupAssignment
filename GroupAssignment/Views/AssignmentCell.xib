@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssignmentCell" rowHeight="290" id="UpW-DH-FKP" customClass="AssignmentCell" customModule="GroupAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="290"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UpW-DH-FKP" id="zTw-qu-qxE">
+                <rect key="frame" x="0.0" y="0.0" width="568" height="290"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Task Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Guv-gi-Hdu">
+                        <rect key="frame" x="50" y="30" width="118" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Task Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeS-bp-oLN">
+                        <rect key="frame" x="40" y="70.333333333333343" width="83" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="agg-QO-rQ3">
+                        <rect key="frame" x="59.999999999999986" y="113.66666666666669" width="160.66666666666663" height="24"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calender" translatesAutoresizingMaskIntoConstraints="NO" id="kyG-uO-uaw">
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mN-xy-RCw">
+                                <rect key="frame" x="44.000000000000007" y="0.0" width="116.66666666666669" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="3hv-hx-36A">
+                        <rect key="frame" x="49" y="160.66666666666666" width="204" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYZ-DI-M3T">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Completed Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qR3-as-h6u">
+                                <rect key="frame" x="67" y="0.0" width="137" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XY-8B-4hd">
+                        <rect key="frame" x="32" y="231" width="100" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Ffa-j2-982"/>
+                            <constraint firstAttribute="height" constant="50" id="LbT-Ob-K1W"/>
+                            <constraint firstAttribute="width" constant="100" id="bnj-x6-iQt"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="Delete_btn" title=""/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMW-tL-5AM">
+                        <rect key="frame" x="282" y="236" width="112" height="40"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="Detail_btn" title=""/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Guv-gi-Hdu" firstAttribute="leading" secondItem="zTw-qu-qxE" secondAttribute="leading" constant="50" id="4Es-1B-YH3"/>
+                    <constraint firstItem="Guv-gi-Hdu" firstAttribute="leading" secondItem="zTw-qu-qxE" secondAttribute="leading" constant="50" id="5ZR-4j-Loq"/>
+                    <constraint firstItem="agg-QO-rQ3" firstAttribute="leading" secondItem="zTw-qu-qxE" secondAttribute="leadingMargin" constant="40" id="7Cd-YR-loc"/>
+                    <constraint firstItem="NMW-tL-5AM" firstAttribute="leading" secondItem="2XY-8B-4hd" secondAttribute="trailing" constant="150" id="DOB-eg-pnf"/>
+                    <constraint firstItem="NMW-tL-5AM" firstAttribute="top" secondItem="zTw-qu-qxE" secondAttribute="top" constant="236" id="Ia8-cc-K1m"/>
+                    <constraint firstAttribute="bottom" secondItem="NMW-tL-5AM" secondAttribute="bottom" constant="14" id="Lgn-Q3-5x4"/>
+                    <constraint firstItem="jeS-bp-oLN" firstAttribute="top" secondItem="Guv-gi-Hdu" secondAttribute="bottom" constant="20" id="XNi-5K-zep"/>
+                    <constraint firstItem="jeS-bp-oLN" firstAttribute="leading" secondItem="zTw-qu-qxE" secondAttribute="leading" constant="40" id="YMq-Pb-Ozf"/>
+                    <constraint firstItem="agg-QO-rQ3" firstAttribute="top" secondItem="jeS-bp-oLN" secondAttribute="bottom" constant="23" id="bF4-Fn-9we"/>
+                    <constraint firstItem="Guv-gi-Hdu" firstAttribute="top" secondItem="zTw-qu-qxE" secondAttribute="top" constant="30" id="dnA-zp-nfF"/>
+                    <constraint firstItem="3hv-hx-36A" firstAttribute="leading" secondItem="zTw-qu-qxE" secondAttribute="leadingMargin" constant="40" id="jab-c1-Clx"/>
+                    <constraint firstItem="3hv-hx-36A" firstAttribute="top" secondItem="agg-QO-rQ3" secondAttribute="bottom" constant="20" id="lCT-1v-4Nr"/>
+                    <constraint firstItem="2XY-8B-4hd" firstAttribute="top" secondItem="3hv-hx-36A" secondAttribute="bottom" constant="20" id="oLu-CI-Xjl"/>
+                    <constraint firstAttribute="bottom" secondItem="2XY-8B-4hd" secondAttribute="bottom" constant="9" id="rAR-YD-WbX"/>
+                    <constraint firstItem="2XY-8B-4hd" firstAttribute="leading" secondItem="zTw-qu-qxE" secondAttribute="leading" constant="32" id="rfM-cb-JiV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="completionStatusImage" destination="VYZ-DI-M3T" id="dTc-yU-vMv"/>
+                <outlet property="completionStatusLabel" destination="qR3-as-h6u" id="zxZ-rc-7vN"/>
+                <outlet property="deleteTaskButton" destination="2XY-8B-4hd" id="hmR-cj-HjE"/>
+                <outlet property="dueDateLabel" destination="8mN-xy-RCw" id="9xk-Ug-rgV"/>
+                <outlet property="taskDetailLabel" destination="jeS-bp-oLN" id="te5-a0-G0n"/>
+                <outlet property="taskTitleLabel" destination="Guv-gi-Hdu" id="vU8-9p-CBy"/>
+                <outlet property="viewDetailsButton" destination="NMW-tL-5AM" id="bmr-yc-ATv"/>
+            </connections>
+            <point key="canvasLocation" x="-348.09160305343511" y="-128.87323943661971"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Calender" width="24" height="24"/>
+        <image name="Delete_btn" width="76" height="26"/>
+        <image name="Detail_btn" width="88" height="26"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
