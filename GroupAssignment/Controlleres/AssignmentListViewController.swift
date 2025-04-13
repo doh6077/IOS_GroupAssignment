@@ -66,7 +66,7 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
             assignments = try context.fetch(request)
             assignmentTableView.reloadData()
         } catch {
-            print("❌ Failed to fetch tasks: \(error)")
+            print("Failed to fetch tasks: \(error)")
         }
     }
     
@@ -114,7 +114,6 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
         cell.completionStatusLabel.text = assignment.completionStatus ? "Completed" : "In Progress"
         cell.completionStatusImage.image = UIImage(named: assignment.completionStatus ? "Completed_icon" : "InProgress_icon")
         
-        // ✅ Set delegate and assignment
         cell.delegate = self
         cell.assignment = assignment
 
@@ -170,9 +169,8 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
         do {
             assignments = try context.fetch(request)
             assignmentTableView.reloadData()
-            print("✅ Filter applied: \(status ?? "All") - \(sortOption ?? "None")")
         } catch {
-            print("❌ Error applying filter/sort: \(error)")
+            print("Error applying filter/sort: \(error)")
         }
     }
 
