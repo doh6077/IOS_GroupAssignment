@@ -31,18 +31,19 @@ class FilterSortViewController: UIViewController, UIGestureRecognizerDelegate {
         selectedStatus = statusOptions[0]
         selectedSort = sortOptions[0]
         
-        let backBTN = UIBarButtonItem(image: UIImage(named: "back_btn1"),
-                                      style: .plain,
-                                      target: navigationController,
-                                      action: #selector(UINavigationController.popViewController(animated:)))
-        navigationItem.leftBarButtonItem = backBTN
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
+
     }
 
     @IBAction func applyButtonTapped(_ sender: UIButton) {
         delegate?.applyFilter(status: selectedStatus, sortOption: selectedSort)
         dismiss(animated: true)
     }
+    
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 
