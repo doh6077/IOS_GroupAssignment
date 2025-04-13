@@ -7,14 +7,15 @@
 import CoreData
 import UIKit
 
-class AssignmentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AssignmentCellDelegate {
+class AssignmentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AssignmentCellDelegate, FilterSortDelegate {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addAssignmentButton: UIButton!
     @IBOutlet weak var assignmentTableView: UITableView!
 
     var assignments: [UserTask] = []
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var currentStatusFilter: String?
+    var currentSortOption: String?
     @IBAction func addAssignmentTapped(_ sender: UIButton) {
         print("add button clicked from list view")
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -46,7 +47,8 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchAssignments()
+        //fetchAssignments()
+        applyFilter(status: currentStatusFilter, sortOption: currentSortOption)
     }
 
 //    @objc func addAssignmentTapped() {
@@ -121,7 +123,16 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
 
 
 
-
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let filterVC = storyboard.instantiateViewController(withIdentifier: "FilterSortViewController") as? FilterSortViewController {
+            filterVC.delegate = self
+            filterVC.modalPresentationStyle = .fullScreen
+            present(filterVC, animated: true)
+        }
+        
+    }
+    
     // Helper for formatting date
     func formattedDate(_ date: Date?) -> String {
         guard let date = date else { return "No due date" }
@@ -129,6 +140,40 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         return formatter.string(from: date)
+    }
+
+    // MARK: - FilterSortDelegate
+    func applyFilter(status: String?, sortOption: String?) {
+        currentStatusFilter = status
+        currentSortOption = sortOption
+
+        let request: NSFetchRequest<UserTask> = UserTask.fetchRequest()
+        
+        // Filtering
+        if let status = status {
+            if status == "Completed" {
+                request.predicate = NSPredicate(format: "completionStatus == %@", NSNumber(value: true))
+            } else if status == "In Progress" {
+                request.predicate = NSPredicate(format: "completionStatus == %@", NSNumber(value: false))
+            }
+        }
+
+        // Sorting
+        if let sortOption = sortOption {
+            if sortOption == "Due Date" {
+                request.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
+            } else if sortOption == "Title" {
+                request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+            }
+        }
+
+        do {
+            assignments = try context.fetch(request)
+            assignmentTableView.reloadData()
+            print("✅ Filter applied: \(status ?? "All") - \(sortOption ?? "None")")
+        } catch {
+            print("❌ Error applying filter/sort: \(error)")
+        }
     }
 
 }
