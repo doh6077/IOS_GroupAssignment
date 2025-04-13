@@ -530,12 +530,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPF-Rs-zZ0">
-                                <rect key="frame" x="22" y="11" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List of Assignments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWD-Mi-EPs">
                                 <rect key="frame" x="82" y="66" width="227" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -674,28 +668,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="                 Search" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upR-Lj-NWe">
-                                <rect key="frame" x="16" y="175" width="361" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Search_btn" translatesAutoresizingMaskIntoConstraints="NO" id="ge7-gg-y6p">
-                                <rect key="frame" x="30" y="180" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Y6d-CD-Uv5">
-                                <rect key="frame" x="16" y="127" width="393" height="40"/>
+                                <rect key="frame" x="16" y="142" width="393" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Filter_btn"/>
                                 <connections>
-                                    <segue destination="8AM-FD-8At" kind="show" id="6nT-sq-qo0"/>
+                                    <action selector="filterButtonTapped:" destination="hBT-ca-ebl" eventType="touchUpInside" id="k8q-rb-u5O"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69Y-20-Xgs">
-                                <rect key="frame" x="323" y="80" width="64" height="54"/>
+                                <rect key="frame" x="167" y="9" width="361" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Add_btn" title=""/>
@@ -887,15 +870,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euP-7p-3Hb">
-                                <rect key="frame" x="35" y="55" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="q6T-Wy-4LI" eventType="touchUpInside" id="99T-rk-n2C"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wTC-aH-aaE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -908,7 +882,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Nav_item1" id="aec-Ny-dU8"/>
                     <connections>
-                        <outlet property="backButton" destination="euP-7p-3Hb" id="Lk0-OC-8Hy"/>
                         <outlet property="dueDatePickerField" destination="Qca-wR-Vgl" id="4p1-LK-09B"/>
                         <outlet property="estTimePickerField" destination="mDC-gE-zhF" id="PkE-zm-LKm"/>
                         <outlet property="remindMePickerField" destination="eJV-Sm-PPr" id="Stu-KS-AbI"/>
@@ -941,72 +914,86 @@
             </objects>
             <point key="canvasLocation" x="6682" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter Sort View Controller-->
         <scene sceneID="j5n-Tn-oMQ">
             <objects>
-                <viewController id="8AM-FD-8At" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterSortViewController" id="8AM-FD-8At" customClass="FilterSortViewController" customModule="GroupAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2nm-jF-Xkl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzx-Ya-Eeh">
-                                <rect key="frame" x="30" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter &amp; Sort" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAe-4v-Q2A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Filter &amp; Sort" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAe-4v-Q2A">
                                 <rect key="frame" x="82" y="66" width="227" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOx-nm-jbT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOx-nm-jbT">
                                 <rect key="frame" x="31" y="154" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Status" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-wG-JLR">
-                                <rect key="frame" x="30" y="201" width="330" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="N9o-T8-9my">
-                                <rect key="frame" x="321" y="206" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es7-Rh-wSe">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es7-Rh-wSe">
                                 <rect key="frame" x="30" y="652" width="330" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="0dI-UN-xH6"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Filter_btn2"/>
+                                <connections>
+                                    <action selector="applyButtonTapped:" destination="8AM-FD-8At" eventType="touchUpInside" id="hzF-iv-Mwz"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mT-Ju-sVv">
-                                <rect key="frame" x="30" y="294" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mT-Ju-sVv">
+                                <rect key="frame" x="16" y="294" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sort by" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUk-sO-LF6">
-                                <rect key="frame" x="30" y="342" width="330" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowdown" translatesAutoresizingMaskIntoConstraints="NO" id="hWU-Mp-YzR">
-                                <rect key="frame" x="321" y="347" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7y-iR-49V">
+                                <rect key="frame" x="0.0" y="220" width="393" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="W0W-qe-ytG"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-g6-AMw">
+                                <rect key="frame" x="-1" y="364" width="393" height="44"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzx-Ya-Eeh">
+                                <rect key="frame" x="30" y="66" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="19l-qD-Oz0"/>
+                                    <constraint firstAttribute="height" constant="40" id="bGr-e6-K9H"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
+                                <connections>
+                                    <action selector="backButton:" destination="8AM-FD-8At" eventType="touchUpInside" id="WmX-tZ-B29"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cH6-1u-GmP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N7y-iR-49V" firstAttribute="top" secondItem="BOx-nm-jbT" secondAttribute="bottom" constant="24" id="2gw-AX-zs0"/>
+                            <constraint firstItem="0mT-Ju-sVv" firstAttribute="leading" secondItem="Es7-Rh-wSe" secondAttribute="leading" id="3ku-mN-edD"/>
+                            <constraint firstItem="bzx-Ya-Eeh" firstAttribute="top" secondItem="iAe-4v-Q2A" secondAttribute="top" id="7Dq-9N-Yb5"/>
+                            <constraint firstItem="BOx-nm-jbT" firstAttribute="leading" secondItem="cH6-1u-GmP" secondAttribute="leading" constant="31" id="AUx-Qf-s8c"/>
+                            <constraint firstItem="N7y-iR-49V" firstAttribute="leading" secondItem="cH6-1u-GmP" secondAttribute="leading" id="COh-Kq-QUF"/>
+                            <constraint firstItem="cH6-1u-GmP" firstAttribute="trailing" secondItem="Es7-Rh-wSe" secondAttribute="trailing" constant="33" id="CZ4-IQ-eSe"/>
+                            <constraint firstItem="bzx-Ya-Eeh" firstAttribute="top" secondItem="cH6-1u-GmP" secondAttribute="top" constant="7" id="Ecf-KZ-XwZ"/>
+                            <constraint firstItem="0mT-Ju-sVv" firstAttribute="leading" secondItem="bzx-Ya-Eeh" secondAttribute="leading" id="Ogg-ID-IaH"/>
+                            <constraint firstItem="Es7-Rh-wSe" firstAttribute="centerX" secondItem="iAe-4v-Q2A" secondAttribute="centerX" id="cKj-4H-hla"/>
+                            <constraint firstItem="N7y-iR-49V" firstAttribute="centerX" secondItem="2nm-jF-Xkl" secondAttribute="centerX" id="mRd-yh-Hjv"/>
+                            <constraint firstItem="0mT-Ju-sVv" firstAttribute="top" secondItem="N7y-iR-49V" secondAttribute="bottom" constant="25" id="oJg-rY-U9V"/>
+                            <constraint firstItem="bzx-Ya-Eeh" firstAttribute="leading" secondItem="2nm-jF-Xkl" secondAttribute="leadingMargin" id="pIa-hZ-xU9"/>
+                            <constraint firstItem="cH6-1u-GmP" firstAttribute="bottom" secondItem="Es7-Rh-wSe" secondAttribute="bottom" constant="118" id="t8d-ZF-I9M"/>
+                            <constraint firstItem="iAe-4v-Q2A" firstAttribute="leading" secondItem="bzx-Ya-Eeh" secondAttribute="trailing" constant="26" id="tcU-Hw-lf3"/>
+                            <constraint firstItem="BOx-nm-jbT" firstAttribute="top" secondItem="bzx-Ya-Eeh" secondAttribute="bottom" constant="48" id="uSz-VJ-x7j"/>
+                            <constraint firstItem="Es7-Rh-wSe" firstAttribute="centerX" secondItem="4ib-g6-AMw" secondAttribute="centerX" id="yRC-Nz-49w"/>
+                            <constraint firstItem="4ib-g6-AMw" firstAttribute="top" secondItem="0mT-Ju-sVv" secondAttribute="bottom" constant="23" id="yVV-7d-Cm2"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Nav_item2" id="9r4-98-tJO"/>
                     <navigationItem key="navigationItem" id="6Dh-1b-wvm">
@@ -1019,6 +1006,10 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sortPicker" destination="4ib-g6-AMw" id="wTJ-kO-yNi"/>
+                        <outlet property="statusPicker" destination="N7y-iR-49V" id="5zy-gn-fHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FA-A1-hdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1032,12 +1023,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pae-Qb-AdK">
-                                <rect key="frame" x="30" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Back_btn1"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM7-ZN-FLK">
                                 <rect key="frame" x="320" y="20" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1230,7 +1215,6 @@
         <image name="Next_btn" width="330" height="48"/>
         <image name="Password" width="24" height="24"/>
         <image name="Remember_btn" width="24" height="24"/>
-        <image name="Search_btn" width="24" height="24"/>
         <image name="SignIn_btn" width="330" height="48"/>
         <image name="SignUp_btn" width="330" height="48"/>
         <image name="arrowdown" width="24" height="24"/>
