@@ -6,9 +6,43 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    func loadUserProfile() {
+        guard let user = Auth.auth().currentUser else {
+            print("No user is currently logged in.")
+            return
+        }
+
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(user.uid)
+
+        docRef.getDocument { document, error in
+            if let error = error {
+                print("Error fetching user document: \(error.localizedDescription)")
+                return
+            }
+
+            guard let document = document, document.exists,
+                  let data = document.data(),
+                  let fullName = data["fullName"] as? String else {
+                print("User document is missing or doesn't contain fullName.")
+                self.nameLabel.text = "Welcome!"
+                return
+            }
+
+            DispatchQueue.main.async {
+                self.nameLabel.text = "Welcome, \(fullName)!"
+            }
+        }
+    }
+
+    
     let schools = ["Sheridan College", "University of Toronto", "University of Waterloo", "Humber College"]
     var selectedSchool: String?
 
@@ -18,14 +52,22 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBAction func skipBtn(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "goToMainTabBar", sender: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUserProfile()
+    }
+
     override func viewDidLoad() {
            super.viewDidLoad()
+        
 
            pickerView.delegate = self
            pickerView.dataSource = self
            schoolTextField.inputView = pickerView
            schoolTextField.tintColor = .clear
            schoolTextField.placeholder = "Select School"
+        
        }
 
        // MARK: - Picker View Data Source
