@@ -22,13 +22,13 @@ class LoginViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if Auth.auth().currentUser != nil {
-            performSegue(withIdentifier: "goToTabBar", sender: self)
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        if Auth.auth().currentUser != nil {
+//            performSegue(withIdentifier: "goToTabBar", sender: self)
+//        }
+//    }
 
 
     // MARK: - Login Function

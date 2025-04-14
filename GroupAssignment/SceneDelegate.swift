@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //create and set onBoardingCompleted
         //set this to true and it will go straight to tabbar view
         //set this to false, and it will go through onboarding screens
-        UserDefaults.standard.set(true, forKey: "onBoardingCompleted")
+        UserDefaults.standard.set(false, forKey: "onBoardingCompleted")
         //control flag
         let hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "onBoardingCompleted")
 
