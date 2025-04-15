@@ -48,6 +48,14 @@ class LoginViewController: UIViewController {
                 self.showAlert(message: "Login Successful!") {
                     // Navigate to homepage (e.g., with segue)
                     self.performSegue(withIdentifier: "goToTabBar", sender: self)
+                    
+                }
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? UITabBarController {
+                    if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                        sceneDelegate.window?.rootViewController = tabBarController
+                        sceneDelegate.window?.makeKeyAndVisible()
+                    }
                 }
             }
         }
