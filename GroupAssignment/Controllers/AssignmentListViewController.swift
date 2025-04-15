@@ -6,7 +6,8 @@
 //
 import CoreData
 import UIKit
-
+import FirebaseAuth
+import FirebaseFirestore
 class AssignmentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AssignmentCellDelegate, FilterSortDelegate {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addAssignmentButton: UIButton!
@@ -16,6 +17,8 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var currentStatusFilter: String?
     var currentSortOption: String?
+    
+    
     @IBAction func addAssignmentTapped(_ sender: UIButton) {
         print("add button clicked from list view")
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -24,13 +27,6 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
                present(createVC, animated: true, completion: nil)
            }
        }
-
-    @IBAction func addButtonTapped(_ sender: UIButton) {
-        print("➕ addButton was tapped")
-    }
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,7 +57,10 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
 //    }
 
     func fetchAssignments() {
+        guard let user = Auth.auth().currentUser else { return }
+        let currentUserId = user.uid
         let request: NSFetchRequest<UserTask> = UserTask.fetchRequest()
+        request.predicate = NSPredicate(format: "userId == %@", currentUserId)
         do {
             assignments = try context.fetch(request)
             assignmentTableView.reloadData()
@@ -146,18 +145,29 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
         currentStatusFilter = status
         currentSortOption = sortOption
 
+        guard let user = Auth.auth().currentUser else { return }
+        let currentUserId = user.uid
+
         let request: NSFetchRequest<UserTask> = UserTask.fetchRequest()
-        
-        // Filtering
+
+        var predicates: [NSPredicate] = []
+
+        // Always filter by userId
+        predicates.append(NSPredicate(format: "userId == %@", currentUserId))
+
+        // Optional: filter by completionStatus
         if let status = status {
             if status == "Completed" {
-                request.predicate = NSPredicate(format: "completionStatus == %@", NSNumber(value: true))
+                predicates.append(NSPredicate(format: "completionStatus == %@", NSNumber(value: true)))
             } else if status == "In Progress" {
-                request.predicate = NSPredicate(format: "completionStatus == %@", NSNumber(value: false))
+                predicates.append(NSPredicate(format: "completionStatus == %@", NSNumber(value: false)))
             }
         }
 
-        // Sorting
+        // Combine predicates
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+
+        // Optional: sort
         if let sortOption = sortOption {
             if sortOption == "Due Date" {
                 request.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
@@ -173,6 +183,7 @@ class AssignmentListViewController: UIViewController, UITableViewDelegate, UITab
             print("Error applying filter/sort: \(error)")
         }
     }
+
 
 }
     

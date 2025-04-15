@@ -1,5 +1,7 @@
 import UIKit
 import CoreData
+import FirebaseAuth
+import FirebaseFirestore
 
 class CreateAssignmentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -82,6 +84,7 @@ class CreateAssignmentViewController: UIViewController, UIPickerViewDelegate, UI
             let remindMe = remindMeOptions[selectedRemindMeIndex] == "Yes"
 
             let newTask = UserTask(context: self.context)
+            newTask.userId = Auth.auth().currentUser?.uid
             newTask.title = title
             newTask.detail = detail
             newTask.submissionTime = submissionTime
