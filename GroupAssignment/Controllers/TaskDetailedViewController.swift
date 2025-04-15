@@ -18,6 +18,7 @@ class TaskDetailedViewController: UIViewController {
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var estCompletionTimeField: UITextField!
     
+    @IBOutlet weak var submissionDetail: UITextView!
     var assignment: UserTask?
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -34,6 +35,7 @@ class TaskDetailedViewController: UIViewController {
             redmindMeField.text = task.remindMe ? "Yes, Remind Me" : "No, Don't Remind Me"
             dueDateLabel.text = formattedDate(task.dueDate)
             dueDateField.text = formattedDate(task.dueDate)
+            submissionDetail.text = task.detail
             submissionTimeLabel.text = formattedDate(task.submissionTime)
             estCompletionTimeField.text = "\(task.estCompletionTime) Hours"
 
