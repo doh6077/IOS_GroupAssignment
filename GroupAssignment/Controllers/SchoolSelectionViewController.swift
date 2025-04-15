@@ -94,8 +94,15 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate, UIP
 
            // Trigger segue to Tab Bar Controller
            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-               self.performSegue(withIdentifier: "goToMainTabBar", sender: self)
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               if let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? UITabBarController {
+                   if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                       sceneDelegate.window?.rootViewController = tabBarController
+                       sceneDelegate.window?.makeKeyAndVisible()
+                   }
+               }
            }
+
        }
 }
 
