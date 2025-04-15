@@ -892,7 +892,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-62-gaK">
-                                        <rect key="frame" x="0.0" y="244" width="393" height="140"/>
+                                        <rect key="frame" x="0.0" y="244" width="393" height="184"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submission Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-7W-smS">
                                                 <rect key="frame" x="131.66666666666666" y="0.0" width="129.99999999999997" height="21"/>
@@ -904,8 +904,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fpo-qc-PlG">
-                                                <rect key="frame" x="0.0" y="33" width="393" height="27.666666666666671"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fpo-qc-PlG">
+                                                <rect key="frame" x="0.0" y="33" width="393" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="GUJ-S6-lXD"/>
                                                     <constraint firstAttribute="width" constant="393" id="Izx-RF-JAo"/>
@@ -913,8 +913,8 @@
                                                     <constraint firstAttribute="height" constant="50" id="sOg-Ty-z71"/>
                                                 </constraints>
                                             </datePicker>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orV-ge-XHu">
-                                                <rect key="frame" x="161" y="72.666666666666686" width="71" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orV-ge-XHu">
+                                                <rect key="frame" x="161" y="95" width="71" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="71" id="0Bp-J5-Vo5"/>
                                                     <constraint firstAttribute="height" constant="21" id="70S-XJ-ggO"/>
@@ -923,8 +923,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-wR-Vgl">
-                                                <rect key="frame" x="0.0" y="105.66666666666669" width="393" height="34.333333333333343"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-wR-Vgl">
+                                                <rect key="frame" x="0.0" y="128" width="393" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="393" id="JNa-ib-9pl"/>
                                                     <constraint firstAttribute="height" constant="56" id="R8Q-eq-5dk"/>
@@ -940,7 +940,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-cD-QYd">
-                                        <rect key="frame" x="0.0" y="411" width="393" height="163"/>
+                                        <rect key="frame" x="0.0" y="455" width="393" height="119"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Completion Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbD-Fe-UfK">
                                                 <rect key="frame" x="91.666666666666686" y="0.0" width="210" height="21"/>
@@ -970,7 +970,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJV-Sm-PPr">
-                                                <rect key="frame" x="0.0" y="114" width="393" height="49"/>
+                                                <rect key="frame" x="0.0" y="114" width="393" height="5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="393" id="8FR-G4-28F"/>
                                                     <constraint firstAttribute="height" constant="49" id="ULh-a0-ykq"/>
@@ -1229,12 +1229,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99k-m9-kOO">
-                                <rect key="frame" x="30" y="763" width="330" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="BackHome_btn"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dv-np-sHX">
                                 <rect key="frame" x="19" y="687" width="354" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1247,7 +1241,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="fzc-Ua-hr7"/>
                     <connections>
-                        <outlet property="backHomeButton" destination="99k-m9-kOO" id="QBB-Im-z5h"/>
                         <outlet property="dueDateField" destination="WZn-0n-xno" id="v1Y-cP-aZj"/>
                         <outlet property="dueDateLabel" destination="71n-DZ-JvC" id="2Cl-ep-SaL"/>
                         <outlet property="estCompletionTimeField" destination="rO2-dr-OkL" id="IAP-dL-5Wr"/>
@@ -1508,7 +1501,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_btn" width="40" height="40"/>
-        <image name="BackHome_btn" width="330" height="48"/>
         <image name="Back_btn1" width="40" height="40"/>
         <image name="Background" width="390" height="615"/>
         <image name="Calender" width="24" height="24"/>
